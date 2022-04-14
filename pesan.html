@@ -1,0 +1,1224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <!-- My Css!-->
+    <style>
+      body{margin: 0%;padding: 0%;}
+        .d-none{
+            display: none;
+        }
+        .lapisan{
+        margin: 100px auto;
+        margin-top: 330px;
+        width: 400px;
+        text-align: center;
+        position: relative;
+    }
+    .loading{
+        border-radius: 30px;
+        background-color: whitesmoke;
+    }
+    .loading-bar{
+        height: 18px;
+        border-radius: 30px;
+        transition: .4s linear;
+        transition-property: width, background-color;
+    }
+    .loading-pergi .loading-bar{
+        background-color: #24ecff;
+        animation: loading 5s infinite;
+    }
+    @keyframes loading{
+        0%{
+            width: 0%;
+            background:  #075860;
+        }
+        100%{
+            width: 100%;
+            background: #24ecff;
+            box-shadow:0 0 40px  #24ecff;
+        }
+    }
+    .mohon-tunggu{
+        font-weight: bold;
+        color: aliceblue;
+    }
+        .lapisanpalingatas{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lapisanpalingatas .card-title{
+            font-style: italic;
+            font-size: 20px;
+            color: whitesmoke;
+        }
+        .lapisanpalingbawah{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lapisanpalingbawah .card-title{
+            font-style: italic;
+            font-size: 20px;
+            color: whitesmoke;
+        }
+        form{
+           padding-top: 10px;
+           font-size: 14px;
+           margin-top: 30px; 
+        }
+        input[type="text"],[type="email"],[type="number"]{
+            background-color: rgb(8, 62, 81);
+            border: 2px solid seagreen;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            color: white;
+        }
+        input[type="radio"]{
+            background-color: rgb(8, 62, 81);
+            border: 2px solid seagreen;
+        }
+        .login-form{
+            width: 380px;
+            height: auto;
+            margin: 20px;
+            background-color:  rgb(8, 62, 81) !important;
+            border-radius: 10px !important;
+
+        }
+        .kartu:hover{
+            border: 20px solid salmon;
+            cursor:grab;
+        }
+        .navbar-brand h2 {
+  font-size: 15px;
+  margin-bottom: 0;
+  margin-top: 0;
+  display: inline-block;
+  cursor: pointer;
+}
+nav{
+  margin: 0;
+  padding: 0;
+}
+.navbar-brand h2:hover {
+  cursor: none;
+}
+
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -5px;
+  top: -3px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  background-color: #f00d0d;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+  background-color: #f00d0d;
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+        /* Versi Mobile */
+        @media (max-width: 600px) { 
+            h1{
+                font-size: 30px;
+            }
+            .menu-toggle {
+           display: flex;
+          }
+  
+  nav ul {
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 50%;
+    z-index: -1;
+    transform: translateX(100%);
+    transition: all 1s;
+    opacity: 0;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 7px;
+    border: 2px solid seagreen;
+    border-radius: 20px;
+  }
+  nav ul li:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid seagreen;
+  }
+  .nav-link:hover {
+    color: rgb(149, 13, 147) !important;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+  nav ul.slide {
+    opacity: 1;
+    transform: translateX(0);
+  }
+        }
+/* Versi Destokpop*/
+        @media (min-width: 992px) { 
+           #beres{
+               margin-left: 467px;
+           }
+        
+        .xyz::after{ 
+            content: "";
+            display: block;
+            border-bottom: 3px solid seagreen;
+            width: 50%;
+            margin: auto;
+            opacity: 0;
+            transition: 0.5s;
+          }
+          .xyz:hover::after{
+              opacity: 1;
+              animation: slide 0.3s forwards;
+          }
+        }
+    
+    
+    </style>
+
+    <title>Daftar Ojek Online</title>
+  </head>
+ 
+</svg>
+  <body class="bg-dark">
+          <!-- Navbar-->
+          <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark text-white">
+            <div class="container-md">
+              <a class="navbar-brand">
+                <i class="bi bi-shop"></i>
+                <h2 class="text-uppercase" style="font-weight: bold;">JuraganPesawat</h2>
+              </a>
+              <div class="menu-toggle">
+              <input type="checkbox" data-bs-toggle="collapse" data-bs-target="#navmenu">
+              <span></span>
+              <span></span>
+              <span></span>
+              </input>
+              </div>
+              
+              <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto slide">
+                  <li class="nav-item xyz">
+                    <a href="index.html" class="nav-link text-white">Home</a>
+                  </li>
+                  <li class="nav-item xyz">
+                    <a href="tentang-saya.html" class="nav-link text-white">Tentang Saya</a>
+                  </li>
+                  <li class="nav-item xyz">
+                    <a href="artikel_produk.html" class="nav-link text-white">Produk & Artikel</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+  <div class="lapisanpalingatas mt-5">
+      <div class="card login-form">
+          <div class="card-body">
+              <div class="card-title text-center">PEMINJAMAN/PENYEWAAN JET PRIBADI</div>
+              <div class="card-text">
+                  <form>
+                    <div class="bahaya d-none">
+                    <div class="alert alert-danger d-flex align-items-center" role="alert">
+                        <div class="keterangan">
+                        </div>
+                    </div>
+                      </div>
+                        <div class="form-group">
+                            <label >Nama Lengkap</label>
+                            <input type="text" class="form-control form-control-sm" id="nama-lengkap" placeholder="Masukan Nama">
+                        </div>
+                        <div class="form-group">
+                            <label >Email</label>
+                            <input type="email" class="form-control form-control-sm" id="email" placeholder="Masukan Email Anda Yang Sesunggynya!!!!!">
+                        </div>
+                        <div class="form-group">
+                            <label for="">No.Kartu Keluarga</label>
+                            <input type="text" class="form-control form-control-sm" id="keluarga" placeholder="Masukan Nama">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Nama Ibu</label>
+                            <input type="text" class="form-control form-control-sm" id="ibu" placeholder="Masukan Nama Ibu Anda">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Pekerjaan</label>
+                            <input type="text" class="form-control form-control-sm" id="pekerjaan" placeholder="Masukan Pekerjaan Anda !">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Jenis Kelamin Anda</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="pria" value="pria">
+                            <label class="form-check-label" for="inlineRadio1">Pria</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="wanita" value="wanita">
+                            <label class="form-check-label" for="inlineRadio2">Wanita</label>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Alamat Anda</label>
+                            <input type="text" class="form-control form-control-sm" id="alamat" placeholder="Masukan Alamat Detail Anda!">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Tanggal Berangkat</label>
+                            <input type="date" class="form-control form-control-sm" id="tanggal-berangkat" placeholder="Masukan Alamat Detail Anda!">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Jam Berangkat</label>
+                            <input type="time" class="form-control form-control-sm" id="jam-berangkat" placeholder="Masukan Alamat Detail Anda!">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Berapa Jam Perjalanan</label>
+                            <input type="number" class="form-control form-control-sm" id="jam" placeholder="Berapa Jam Perjalanan yang anda lalui!">
+                        </div>
+                          <button type="button" onclick="validasi_akun()" class="btn btn-primary" style="width: 100%;">Selanjutnya</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+<!-- Bagian Pesawat-->
+<div class=" bagian-pesawat d-none">
+<h1 class="text-center mt-4 text-white">Pilih Pesawat yang anda inginkan!</h1>
+<div style=" height: 10px;width: 50%;background-color: #f9d71c;margin-left:25%;" class="mb-5"></div>
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-4 mb-3 mt-3">
+            <div class="card kartu" id="pesawat1">
+                <img src="data:image/jpeg;base64,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" alt="" class="img-fluid mt-3 mb-3"/>
+                <div class="card-body">
+                 <strong><p class="card-text text-center">Jet Gulfstream G-IV</p></strong>
+                 <strong><p class="card-text text-center">$5,591.02 atau Rp.80,264,962 dalam per/jam</p></strong>
+                </div>
+              </div>
+          </div>
+          <div class="col-sm-4 mb-3 mt-3">
+            <div class="card kartu" id="pesawat2">
+                <img src="http://skywanted.com/wp-content/uploads/2017/03/Bombardier-Global-5000-PrivateFly-AA9561.jpg" alt="" class="img-fluid mt-3 mb-3"/>
+                <div class="card-body">
+                  <strong><p class="card-text text-center">Bombardier Global 5000</p></strong>
+                  <strong><p class="card-text text-center">$5,397.57 atau Rp.77,474,204 dalam per/jam</p></strong>
+                </div>
+              </div>
+          </div>
+          <div class="col-sm-4 mb-3 mt-3">
+            <div class="card kartu" id="pesawat3">
+                <img src="https://www.jetcraft.com/wp-content/uploads/2015/10/Lear60XR-Exterior-JS.jpg" alt="" class="img-fluid mt-3 mb-3"/>
+                <div class="card-body kartu">
+                  <strong><p class="card-text text-center">Learjet 60</p></strong>
+                  <strong><p class="card-text text-center">$2,696.59 atau Rp.38,709,684 dalam per/jam</p></strong>
+                </div>
+              </div>
+          </div>
+            <div class="col-sm-4 mb-3 mt-3">
+              <div class="card kartu" id="pesawat4">
+                  <img src="https://vecdn.eweso.net/images/aircraft/de-havilland-dhc-6-twin-otter/aircraft.jpg" alt="" class="img-fluid mt-3 mb-3"/>
+                  <div class="card-body">
+                   <strong><p class="card-text text-center">DHC-6 Twin Otter</p></strong>
+                   <strong><p class="card-text text-center">$1,337.47 atau Rp.19,199,448 dalam per/jam</p></strong>
+                  </div>
+                </div>
+            </div>
+            <div class="col-sm-4 mb-3 mt-3">
+              <div class="card">
+                  <img src="https://thumbs.dreamstime.com/b/coming-soon-delayed-flight-concept-delayed-airplanes-approaching-terminal-gate-airport-101975354.jpg" alt="" class="img-fluid mt-3 mb-3"/>
+                  <div class="card-body">
+                    <strong><p class="card-text text-center">COMING SOON</p></strong>
+                  </div>
+                </div>
+            </div>
+            <div class="col-sm-4 mb-3 mt-3">
+              <div class="card kartu" id="pesawat5">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Embraer_EMB-505_Phenom_300_-_Wallner.jpeg" alt="" class="img-fluid mt-3 mb-3"/>
+                  <div class="card-body">
+                    <strong><p class="card-text text-center">Embraer Phenom 300</p></strong>
+                    <strong><p class="card-text text-center">$1,837.57 atau Rp.26,376,939 dalam per/jam</p></strong>
+                  </div>
+                </div>
+            </div>
+       </div>
+       </div>
+    </div>
+<!-- Bagian Bandara -->
+<div class="bagian-bandara d-none">
+    <h1 class="text-center mt-4 text-white">Pilih Bandara asal Pesawat bandara yang anda inginkan!</h1>
+    <div style=" height: 10px;width: 50%;background-color: #f9d71c;margin-left:25%;" class="mb-5"></div>
+      <div class="container">
+          <div class="row">
+              <div class="col-sm-4 mb-3 mt-3">
+                <div class="card kartu" id="sentani">
+                    <img src="https://suarapemerintah.id/wp-content/uploads/2021/08/BANDARA-SENTANI-PAPUA.jpg" alt="" class="img-fluid mt-3 mb-3"/>
+                    <div class="card-body">
+                     <strong><p class="card-text text-center">Bandara Internasional Sentani Jayapura</p></strong>
+                     <strong><p class="card-text text-center">Rekomedasi paling Mantap!</p></strong>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-sm-4 mb-3 mt-3">
+                <div class="card kartu" id="surabaya">
+                    <img src="https://cdn1-production-images-kly.akamaized.net/wMBFDpXgsyxjIG5VKIuxvHlTha8=/640x360/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/3215828/original/052789100_1598082876-22_Agustus_2020-3_ok.jpg" alt="" class="img-fluid mt-3 mb-3"/>
+                    <div class="card-body">
+                      <strong><p class="card-text text-center">Bandara Udara Internasional Juanda Surabaya</p></strong>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-sm-4 mb-3 mt-3">
+                <div class="card kartu" id="jakarta">
+                    <img src="https://www.portonews.com/wp-content/uploads/2019/06/Soetta-1.jpg" alt="" class="img-fluid mt-3 mb-3"/>
+                    <div class="card-body">
+                      <strong><p class="card-text text-center">Bandar Udara Internasional Soekarno - Hatta Jakarta</p></strong>
+                    </div>
+                  </div>
+              </div>
+           </div>
+        </div>
+        </div>
+      <!-- Data Peminjam -->
+      <div class="data-peminjam d-none">
+        <div class="col-sm-8 bg-white rounded-right mb-5" style="margin-left: 15%;">
+         <h3 class="mt-3 text-center">Data Pribadi</h3>
+         <hr class="badge-success mt-0 w-25" style="margin-left: 37%;"> 
+         <div class="row">
+             <div class="col-sm-6">
+                    <p class="font-weight-bold" >Nama Lengkap</p>
+                    <h6 class="text-muted"><span id="inisial"></span><spana  id="data-nama">xxxx@gmail.com</span></h6>
+             </div>
+             <div class="col-sm-6">
+                <p class="font-weight-bold">Nomor Kartu Keluarga</p>
+                <h6 class="text-muted" id="data-keluarga">xxxx@gmail.com</h6>
+         </div>
+         <div class="col-sm-6">
+            <p class="font-weight-bold">Nama Ibu</p>
+            <h6 class="text-muted"  id="data-ibu">xxxx@gmail.com</h6>
+     </div>
+     <div class="col-sm-6">
+        <p class="font-weight-bold">Pekerjaan</p>
+        <h6 class="text-muted"  id="data-pekerjaan">xxxx@gmail.com</h6>
+ </div>
+     <div class="col-sm-6">
+        <p class="font-weight-bold">Alamat Anda</p>
+        <h6 class="text-muted" id="data-alamat">xxxx@gmail.com</h6>
+    </div>
+    <div class="col-sm-6">
+        <p class="font-weight-bold">Email Anda</p>
+        <h6 class="text-muted" id="data-email">xxxx@gmail.com</h6>
+    </div>
+    </div>
+    <hr class="bg-success">
+    <div class="row">
+        <h3 class="mt-3 text-center">Hal yang Perlu Diperhatikan</h3>
+        <div class="col-sm-6 mb-4">
+            <p class="font-weight-bold">Jenis Pesawat Yang Dipilih</p>
+            <h6 class="text-muted" id="pesawat-dipilih">xxxx@gmail.com</h6>
+        </div>
+        <div class="col-sm-6 mb-4">
+            <p class="font-weight-bold" >Lama Perjalanan</p>
+            <h6 class="text-muted" id="data-perjalanan">xxxx@gmail.com</h6>
+        </div>
+        <div class="col-sm-6 mb-4">
+            <p class="font-weight-bold">Potongan Harga</p>
+            <h6 class="text-muted" id="potong">10%</h6>
+        </div>
+        <div class="col-sm-6 mb-4">
+            <p class="font-weight-bold" >Bandara Asal</p>
+            <h6 class="text-muted" id="bandara-asal">xxxx@gmail.com</h6>
+        </div>
+        <div class="col-sm-6 mb-4">
+            <p class="font-weight-bold" id="harga-jam">Harga Per/Jam</p>
+            <h6 class="text-muted" id="harga-perjam"></h6>
+        </div>
+        <div class="col-sm-6 mb-4">
+            <p class="font-weight-bold">Akomodasi Perjalanan </p>
+            <h6 class="text-muted">Rp. <span id="akomodasi">xxxx@gmail.com</span> maksudnya bayar parkiran pesawat, makanan, keterlambatan jika ada sisanya pasti kami akan kembaliakan</h6>
+        </div>
+        <div class="col-sm-6 mb-4">
+            <p class="font-weight-bold">Crew</p>
+            <h6 class="text-muted">2</h6>
+        </div>
+        <div class="col-sm-6 mb-4">
+            <p class="font-weight-bold">Biaya Admin</p>
+            <h6 class="text-muted" id="admin"></h6>
+        </div>
+        <div class="col-sm-6 mb-4">
+            <p class="font-weight-bold">Tanggal Berangkat</p>
+            <h6 class="text-muted" id="tanggal">2</h6>
+        </div>
+        <div class="col-sm-6 mb-4">
+            <p class="font-weight-bold">Jam Berangkat</p>
+            <h6 class="text-muted" id="time"></h6>
+        </div>
+    </div>
+    <div class="text-center font-weight-bold">TOTAL YANG HARUS DIBAYAR</div>
+    <h1 class="text-center font-weight-bold text-danger pb-5 cl" style="text-shadow: 2px -2px 2px black;"><strong>Rp.</strong><span id="total-harga"></span></h1>
+    <div class="text-center font-weight-bold text-muted">Bank BCA : 111111019129319481812 a/n JuraganPesawat Corporation</div>
+    <button type="button" onclick="pesankan()" class="btn btn-primary" style="width: 100%;">Pesan</button>       
+</div>
+    </div>
+</div>
+<div>
+</div>
+<!-- Loading Data Masuk-->
+
+<div class="lapisan d-none">
+    <div class="loading loading-pergi">
+        <div class="loading-bar">
+            <div class="loader" style="--n:1;--f:0;"></div>
+            <p class="mohon-tunggu">Ditunggu</p>
+        </div>
+    </div>
+    <p class="keterangan-tunggu text-white"></p>
+</div>
+<!-- Finally-->
+<div class="beres d-none">
+<div class="container">
+<div class="row text-center" >
+    <div class="col-6 bg-white  shadow" style="border: 12px solid aqua;border-radius: 20px;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_zCr54b9KTiGmkTrbjl5tk290BuS1hfLPXDV2uIqHioO-23xpIg4LFZeImgCuJKWsRjo&usqp=CAU" alt="">
+        <h1 class="text-center">Transaksi dan penyimpanan berhasil</h1>
+    </div>
+</div>
+</div>
+</div>
+<!-- GSAP Animated-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/TextPlugin.min.js"></script>
+<!-- My JavaScript-->
+<script>
+    function validasi_akun() {
+        const alert = document.querySelector('.bahaya');
+        const keterangan = document.querySelector(".keterangan");
+            if (document.getElementById("nama-lengkap").value == '') {
+                keterangan.innerHTML = 'Masukan Nama Lengkap Anda!';
+                setTimeout(() => {
+                    alert.classList.add('d-none');
+                
+                }, 2000);
+                alert.classList.remove('d-none');
+                return;
+            }
+            if (document.getElementById("email").value == '') {
+                keterangan.innerHTML = 'Masukan Email Anda!'
+                setTimeout(() => {
+                    alert.classList.add('d-none');
+                }, 2000);
+                alert.classList.remove('d-none');
+                return;
+            }
+            if (document.getElementById("keluarga").value == '') {
+                keterangan.innerHTML = 'Masukan Nomor Kartu Keluarga  Anda!';
+                setTimeout(() => {
+                    alert.classList.add('d-none');
+                }, 2000);
+                alert.classList.remove('d-none');
+                return;
+            }
+            if (document.getElementById("ibu").value == '') {
+                keterangan.innerHTML = 'Masukan Nama Ibu Anda!';
+                setTimeout(() => {
+                    alert.classList.add('d-none');
+                }, 2000);
+                alert.classList.remove('d-none');
+                return;
+            }
+            if (document.getElementById("pekerjaan").value == '') {
+                keterangan.innerHTML = 'Masukan Pekerjaan Anda!'
+                setTimeout(() => {
+                    alert.classList.add('d-none');
+                }, 2000);
+                alert.classList.remove('d-none');
+                return;
+            }
+            if (document.getElementById("alamat").value == '') {
+                keterangan.innerHTML = 'Masukan Alamat Lengkap Anda!'
+                setTimeout(() => {
+                    alert.classList.add('d-none');
+                }, 2000);
+                alert.classList.remove('d-none');
+                return;
+            }
+            if (document.getElementById("pria").checked == false && document.getElementById("wanita").checked == false ) {
+                keterangan.innerHTML = 'Masukan Jenis Kelamin Anda'
+                setTimeout(() => {
+                    alert.classList.add('d-none');
+                }, 2000);
+                alert.classList.remove('d-none');
+                return;
+            }
+            if (document.getElementById("jam").value == '') {
+                keterangan.innerHTML = 'Berapa Jam yang anda Butuh!'
+                setTimeout(() => {
+                    alert.classList.add('d-none');
+                }, 2000);
+                alert.classList.remove('d-none');
+                return;
+            }else{
+                const pesawat = document.querySelector('.bagian-pesawat');
+                const bagan1 = document.querySelector('.lapisanpalingatas');
+                bagan1.classList.add('d-none');
+                pesawat.classList.remove('d-none');
+            if (document.getElementById("pria").checked) {
+              document.getElementById("inisial").innerHTML ='Bpk/Mas/Mr.';
+
+            }else if(document.getElementById("wanita").checked){
+                document.getElementById("inisial").innerHTML ='Ibu/Mbk/Mrs.';
+
+            }
+            document.getElementById('tanggal').innerHTML = document.getElementById('tanggal-berangkat').value;
+            document.getElementById('time').innerHTML =  document.getElementById('jam-berangkat').value;
+            }
+            
+        }
+//untuk pesawat
+//Kumpulan Variabel Pesawat
+var pesawat1 = document.getElementById("pesawat1");
+var pesawat2 = document.getElementById("pesawat2");
+var pesawat3 = document.getElementById("pesawat3");
+var pesawat4 = document.getElementById("pesawat4");
+var pesawat5 = document.getElementById("pesawat5");
+//Kumpulan Variabel bandara
+var sentani = document.getElementById("sentani");
+var surabaya = document.getElementById("surabaya");
+var jakarta = document.getElementById("jakarta");
+
+
+//PESAWAT 1
+
+pesawat1.addEventListener("click", () => {
+         const pesawat = document.querySelector(".bagian-pesawat");
+        const bandara = document.querySelector(".bagian-bandara");
+        bandara.classList.remove("d-none");
+        pesawat.classList.add("d-none");    
+    //untuk asal dari bandara sentani 
+  sentani.addEventListener("click", () => {
+        const bandara = document.querySelector(".bagian-bandara");
+        const peminjam = document.querySelector(".data-peminjam");
+        peminjam.classList.remove("d-none");
+        bandara.classList.add("d-none");
+        var nama = document.getElementById("data-nama");
+        var email = document.getElementById("data-email");
+        var keluarga = document.getElementById("data-keluarga");
+        var ibu = document.getElementById("data-ibu");
+        var pekerjaan = document.getElementById("data-pekerjaan");
+        var alamat = document.getElementById("data-alamat");
+        var perjalanan = document.getElementById("data-perjalanan");
+       //Data dimasukan kedalam Data Pribadi
+        nama.innerHTML = document.getElementById("nama-lengkap").value;
+        email.innerHTML = document.getElementById("email").value;
+        keluarga.innerHTML = document.getElementById("keluarga").value;
+        ibu.innerHTML = document.getElementById("ibu").value;
+        pekerjaan.innerHTML = document.getElementById("pekerjaan").value;
+        alamat.innerHTML = document.getElementById("alamat").value;
+        //Data Kedua  dikirim
+        document.getElementById("pesawat-dipilih").innerHTML = "Jet Gulfstream G-IV";
+        document.getElementById("bandara-asal").innerHTML = "Bandara Sentani";
+        var jam = document.getElementById("jam").value;
+        perjalanan.innerHTML = jam + " jam";
+        document.getElementById("potong").innerHTML = '45%';
+        document.getElementById("admin").innerHTML = 500000;
+        document.getElementById("akomodasi").innerHTML = 20000000;
+        document.getElementById("harga-perjam").innerHTML = "80,264,962";
+        var diskont = (80264962 * jam + 15000000 +  500000) * 45/100;
+        document.getElementById("total-harga").innerHTML = (80264962 * jam + 20000000 +  500000) - diskont;
+
+    });
+    //untuk asal dari bandara surabaya
+    surabaya.addEventListener("click", () => {
+        const bandara = document.querySelector(".bagian-bandara");
+        const peminjam = document.querySelector(".data-peminjam");
+        peminjam.classList.remove("d-none");
+        bandara.classList.add("d-none");
+        var nama = document.getElementById("data-nama");
+        var email = document.getElementById("data-email");
+        var keluarga = document.getElementById("data-keluarga");
+        var ibu = document.getElementById("data-ibu");
+        var pekerjaan = document.getElementById("data-pekerjaan");
+        var alamat = document.getElementById("data-alamat");
+        var perjalanan = document.getElementById("data-perjalanan");
+
+       //Data dimasukan kedalam Data Pribadi
+        nama.innerHTML = document.getElementById("nama-lengkap").value;
+        email.innerHTML = document.getElementById("email").value;
+        keluarga.innerHTML = document.getElementById("keluarga").value;
+        ibu.innerHTML = document.getElementById("ibu").value;
+        pekerjaan.innerHTML = document.getElementById("pekerjaan").value;
+        alamat.innerHTML = document.getElementById("alamat").value;
+        var perjalanan = document.getElementById("data-perjalanan");
+        //Data Kedua  dikirim
+        document.getElementById("pesawat-dipilih").innerHTML = "Jet Gulfstream G-IV";
+        document.getElementById("bandara-asal").innerHTML = "Bandara Juanda Surabaya";
+        var jam = document.getElementById("jam").value;
+        perjalanan.innerHTML = jam + " jam";
+        document.getElementById("potong").innerHTML = '25%';
+        document.getElementById("admin").innerHTML = 500000;
+        document.getElementById("akomodasi").innerHTML = 20000000;
+        document.getElementById("harga-perjam").innerHTML = "80,264,962";
+        var diskont = (80264962 * jam + 15000000 +  500000) * 25/100;
+        document.getElementById("total-harga").innerHTML = (80264962 * jam + 20000000 +  500000) - diskont;
+
+
+    });
+//Bandara Jakarta
+jakarta.addEventListener("click", () => {
+        const bandara = document.querySelector(".bagian-bandara");
+        const peminjam = document.querySelector(".data-peminjam");
+        peminjam.classList.remove("d-none");
+        bandara.classList.add("d-none");
+        var nama = document.getElementById("data-nama");
+        var email = document.getElementById("data-email");
+        var keluarga = document.getElementById("data-keluarga");
+        var ibu = document.getElementById("data-ibu");
+        var pekerjaan = document.getElementById("data-pekerjaan");
+        var alamat = document.getElementById("data-alamat");
+        var perjalanan = document.getElementById("data-perjalanan");
+       //Data dimasukan kedalam Data Pribadi
+        nama.innerHTML = document.getElementById("nama-lengkap").value;
+        email.innerHTML = document.getElementById("email").value;
+        keluarga.innerHTML = document.getElementById("keluarga").value;
+        ibu.innerHTML = document.getElementById("ibu").value;
+        pekerjaan.innerHTML = document.getElementById("pekerjaan").value;
+        alamat.innerHTML = document.getElementById("alamat").value;
+        //Data Kedua  dikirim
+        var jam = document.getElementById("jam").value
+        document.getElementById("pesawat-dipilih").innerHTML = "Jet Gulfstream G-IV";
+        document.getElementById("bandara-asal").innerHTML = "Bandara Jakarta Soekarno - Hatta";
+        var jam = document.getElementById("jam").value;
+        perjalanan.innerHTML = jam + " jam";
+        document.getElementById("potong").innerHTML = '20%';
+        document.getElementById("admin").innerHTML = 500000;
+        document.getElementById("akomodasi").innerHTML = 20000000;
+        document.getElementById("harga-perjam").innerHTML = "80,264,962";
+        var diskont = (80264962 * jam + 15000000 +  500000) * 20/100;
+        document.getElementById("total-harga").innerHTML = (80264962 * jam + 20000000 +  500000) - diskont;
+
+    });
+});
+
+//PESAWAT 2
+pesawat2.addEventListener("click", () => {
+        const pesawat = document.querySelector(".bagian-pesawat");
+        const bandara = document.querySelector(".bagian-bandara");
+        bandara.classList.remove("d-none");
+        pesawat.classList.add("d-none");   
+//untuk asal dari bandara sentani 
+     sentani.addEventListener("click", () => {
+        const bandara = document.querySelector(".bagian-bandara");
+        const peminjam = document.querySelector(".data-peminjam");
+        peminjam.classList.remove("d-none");
+        bandara.classList.add("d-none");
+        var nama = document.getElementById("data-nama");
+        var email = document.getElementById("data-email");
+        var keluarga = document.getElementById("data-keluarga");
+        var ibu = document.getElementById("data-ibu");
+        var pekerjaan = document.getElementById("data-pekerjaan");
+        var alamat = document.getElementById("data-alamat");
+        var perjalanan = document.getElementById("data-perjalanan");
+       //Data dimasukan kedalam Data Pribadi
+        nama.innerHTML = document.getElementById("nama-lengkap").value;
+        email.innerHTML = document.getElementById("email").value;
+        keluarga.innerHTML = document.getElementById("keluarga").value;
+        ibu.innerHTML = document.getElementById("ibu").value;
+        pekerjaan.innerHTML = document.getElementById("pekerjaan").value;
+        alamat.innerHTML = document.getElementById("alamat").value;
+        //Data Kedua  dikirim
+        document.getElementById("pesawat-dipilih").innerHTML = "Bombardier Global 5000";
+        document.getElementById("bandara-asal").innerHTML = "Bandara Sentani";
+        var jam = document.getElementById("jam").value;
+        perjalanan.innerHTML = jam + " jam";
+        document.getElementById("potong").innerHTML = '40%';
+        document.getElementById("admin").innerHTML = 500000;
+        document.getElementById("akomodasi").innerHTML = 15000000;
+        document.getElementById("harga-perjam").innerHTML = "77.474.204";
+        var diskont = (77474204 * jam + 15000000 +  500000) * 40/100;
+        document.getElementById("total-harga").innerHTML = (77474204 * jam + 15000000 +  500000) - diskont;
+
+    });
+    //untuk asal dari bandara surabaya
+    surabaya.addEventListener("click", () => {
+        const bandara = document.querySelector(".bagian-bandara");
+        const peminjam = document.querySelector(".data-peminjam");
+        peminjam.classList.remove("d-none");
+        bandara.classList.add("d-none");
+        var nama = document.getElementById("data-nama");
+        var email = document.getElementById("data-email");
+        var keluarga = document.getElementById("data-keluarga");
+        var ibu = document.getElementById("data-ibu");
+        var pekerjaan = document.getElementById("data-pekerjaan");
+        var alamat = document.getElementById("data-alamat");
+        var perjalanan = document.getElementById("data-perjalanan");
+
+       //Data dimasukan kedalam Data Pribadi
+        nama.innerHTML = document.getElementById("nama-lengkap").value;
+        email.innerHTML = document.getElementById("email").value;
+        keluarga.innerHTML = document.getElementById("keluarga").value;
+        ibu.innerHTML = document.getElementById("ibu").value;
+        pekerjaan.innerHTML = document.getElementById("pekerjaan").value;
+        alamat.innerHTML = document.getElementById("alamat").value;
+        var perjalanan = document.getElementById("data-perjalanan");
+        //Data Kedua  dikirim
+        document.getElementById("pesawat-dipilih").innerHTML = "Bombardier Global 5000";
+        document.getElementById("bandara-asal").innerHTML = "Bandara Juanda Surabaya";
+        var jam = document.getElementById("jam").value;
+        perjalanan.innerHTML = jam + " jam";
+        document.getElementById("potong").innerHTML = '30%';
+        document.getElementById("admin").innerHTML = 500000;
+        document.getElementById("akomodasi").innerHTML = 15000000;
+        document.getElementById("harga-perjam").innerHTML = "77.474.204";
+        var diskont = (77474204 * jam + 15000000 +  500000) * 30/100;
+        document.getElementById("total-harga").innerHTML = (77474204 * jam + 15000000 +  500000) - diskont;
+
+
+    });
+//Bandara Jakarta
+jakarta.addEventListener("click", () => {
+        const bandara = document.querySelector(".bagian-bandara");
+        const peminjam = document.querySelector(".data-peminjam");
+        peminjam.classList.remove("d-none");
+        bandara.classList.add("d-none");
+        var nama = document.getElementById("data-nama");
+        var email = document.getElementById("data-email");
+        var keluarga = document.getElementById("data-keluarga");
+        var ibu = document.getElementById("data-ibu");
+        var pekerjaan = document.getElementById("data-pekerjaan");
+        var alamat = document.getElementById("data-alamat");
+        var perjalanan = document.getElementById("data-perjalanan");
+       //Data dimasukan kedalam Data Pribadi
+        nama.innerHTML = document.getElementById("nama-lengkap").value;
+        email.innerHTML = document.getElementById("email").value;
+        keluarga.innerHTML = document.getElementById("keluarga").value;
+        ibu.innerHTML = document.getElementById("ibu").value;
+        pekerjaan.innerHTML = document.getElementById("pekerjaan").value;
+        alamat.innerHTML = document.getElementById("alamat").value;
+        //Data Kedua  dikirim
+        var jam = document.getElementById("jam").value
+        document.getElementById("pesawat-dipilih").innerHTML = "Bombardier Global 5000";
+        document.getElementById("bandara-asal").innerHTML = "Bandara Jakarta Soekarno - Hatta";
+        var jam = document.getElementById("jam").value;
+        perjalanan.innerHTML = jam + " jam";
+        document.getElementById("potong").innerHTML = '20%';
+        document.getElementById("admin").innerHTML = 500000;
+        document.getElementById("akomodasi").innerHTML = 15000000;
+        document.getElementById("harga-perjam").innerHTML = "77.474.204";
+        var diskont = (77474204 * jam + 15000000 +  500000) * 20/100;
+        document.getElementById("total-harga").innerHTML = (77474204 * jam + 15000000 +  500000) - diskont;
+
+    });
+});
+
+
+//PESAWAT 3
+pesawat3.addEventListener("click", () => {
+        const pesawat = document.querySelector(".bagian-pesawat");
+        const bandara = document.querySelector(".bagian-bandara");
+        bandara.classList.remove("d-none");
+        pesawat.classList.add("d-none");   
+//untuk asal dari bandara sentani 
+     sentani.addEventListener("click", () => {
+        const bandara = document.querySelector(".bagian-bandara");
+        const peminjam = document.querySelector(".data-peminjam");
+        peminjam.classList.remove("d-none");
+        bandara.classList.add("d-none");
+        var nama = document.getElementById("data-nama");
+        var email = document.getElementById("data-email");
+        var keluarga = document.getElementById("data-keluarga");
+        var ibu = document.getElementById("data-ibu");
+        var pekerjaan = document.getElementById("data-pekerjaan");
+        var alamat = document.getElementById("data-alamat");
+        var perjalanan = document.getElementById("data-perjalanan");
+       //Data dimasukan kedalam Data Pribadi
+        nama.innerHTML = document.getElementById("nama-lengkap").value;
+        email.innerHTML = document.getElementById("email").value;
+        keluarga.innerHTML = document.getElementById("keluarga").value;
+        ibu.innerHTML = document.getElementById("ibu").value;
+        pekerjaan.innerHTML = document.getElementById("pekerjaan").value;
+        alamat.innerHTML = document.getElementById("alamat").value;
+        //Data Kedua  dikirim
+        document.getElementById("pesawat-dipilih").innerHTML = "Learjet 60";
+        document.getElementById("bandara-asal").innerHTML = "Bandara Sentani";
+        var jam = document.getElementById("jam").value;
+        perjalanan.innerHTML = jam + " jam";
+        document.getElementById("potong").innerHTML = '30%';
+        document.getElementById("admin").innerHTML = 500000;
+        document.getElementById("akomodasi").innerHTML = 10000000;
+        document.getElementById("harga-perjam").innerHTML = "38.709.684";
+        var diskont = (38709684* jam + 10000000 +  500000) * 30/100;
+        document.getElementById("total-harga").innerHTML = (38709684 * jam + 10000000 +  500000) - diskont;
+
+    });
+    //untuk asal dari bandara surabaya
+    surabaya.addEventListener("click", () => {
+        const bandara = document.querySelector(".bagian-bandara");
+        const peminjam = document.querySelector(".data-peminjam");
+        peminjam.classList.remove("d-none");
+        bandara.classList.add("d-none");
+        var nama = document.getElementById("data-nama");
+        var email = document.getElementById("data-email");
+        var keluarga = document.getElementById("data-keluarga");
+        var ibu = document.getElementById("data-ibu");
+        var pekerjaan = document.getElementById("data-pekerjaan");
+        var alamat = document.getElementById("data-alamat");
+        var perjalanan = document.getElementById("data-perjalanan");
+
+       //Data dimasukan kedalam Data Pribadi
+        nama.innerHTML = document.getElementById("nama-lengkap").value;
+        email.innerHTML = document.getElementById("email").value;
+        keluarga.innerHTML = document.getElementById("keluarga").value;
+        ibu.innerHTML = document.getElementById("ibu").value;
+        pekerjaan.innerHTML = document.getElementById("pekerjaan").value;
+        alamat.innerHTML = document.getElementById("alamat").value;
+        var perjalanan = document.getElementById("data-perjalanan");
+        //Data Kedua  dikirim
+        document.getElementById("pesawat-dipilih").innerHTML = "Bombardier Global 5000";
+        document.getElementById("bandara-asal").innerHTML = "Bandara Juanda Surabaya";
+        var jam = document.getElementById("jam").value;
+        perjalanan.innerHTML = jam + " jam";
+        document.getElementById("potong").innerHTML = '28%';
+        document.getElementById("admin").innerHTML = 500000;
+        document.getElementById("akomodasi").innerHTML = 10000000;
+        document.getElementById("harga-perjam").innerHTML = "38.709.684";
+        var diskont = (38709684 * jam + 10000000 +  500000) * 28/100;
+        document.getElementById("total-harga").innerHTML = (38709684 * jam + 10000000 +  500000) - diskont;
+    });
+//Bandara Jakarta
+jakarta.addEventListener("click", () => {
+        const bandara = document.querySelector(".bagian-bandara");
+        const peminjam = document.querySelector(".data-peminjam");
+        peminjam.classList.remove("d-none");
+        bandara.classList.add("d-none");
+        var nama = document.getElementById("data-nama");
+        var email = document.getElementById("data-email");
+        var keluarga = document.getElementById("data-keluarga");
+        var ibu = document.getElementById("data-ibu");
+        var pekerjaan = document.getElementById("data-pekerjaan");
+        var alamat = document.getElementById("data-alamat");
+        var perjalanan = document.getElementById("data-perjalanan");
+       //Data dimasukan kedalam Data Pribadi
+        nama.innerHTML = document.getElementById("nama-lengkap").value;
+        email.innerHTML = document.getElementById("email").value;
+        keluarga.innerHTML = document.getElementById("keluarga").value;
+        ibu.innerHTML = document.getElementById("ibu").value;
+        pekerjaan.innerHTML = document.getElementById("pekerjaan").value;
+        alamat.innerHTML = document.getElementById("alamat").value;
+        //Data Kedua  dikirim
+        var jam = document.getElementById("jam").value
+        document.getElementById("pesawat-dipilih").innerHTML = "Bombardier Global 5000";
+        document.getElementById("bandara-asal").innerHTML = "Bandara Jakarta Soekarno - Hatta";
+        var jam = document.getElementById("jam").value;
+        perjalanan.innerHTML = jam + " jam";
+        document.getElementById("potong").innerHTML = '24%';
+        document.getElementById("admin").innerHTML = 500000;
+        document.getElementById("akomodasi").innerHTML = 10000000;
+        document.getElementById("harga-perjam").innerHTML = "38.709.684";
+        var diskont = (38709684 * jam + 10000000 +  500000) * 24/100;
+        document.getElementById("total-harga").innerHTML = (38709684 * jam + 10000000 +  500000) - diskont;
+
+    });
+});
+
+//PESAWAT 4
+pesawat4.addEventListener("click", () => {
+        const pesawat = document.querySelector(".bagian-pesawat");
+        const bandara = document.querySelector(".bagian-bandara");
+        bandara.classList.remove("d-none");
+        pesawat.classList.add("d-none");   
+//untuk asal dari bandara sentani 
+     sentani.addEventListener("click", () => {
+        const bandara = document.querySelector(".bagian-bandara");
+        const peminjam = document.querySelector(".data-peminjam");
+        peminjam.classList.remove("d-none");
+        bandara.classList.add("d-none");
+        var nama = document.getElementById("data-nama");
+        var email = document.getElementById("data-email");
+        var keluarga = document.getElementById("data-keluarga");
+        var ibu = document.getElementById("data-ibu");
+        var pekerjaan = document.getElementById("data-pekerjaan");
+        var alamat = document.getElementById("data-alamat");
+        var perjalanan = document.getElementById("data-perjalanan");
+       //Data dimasukan kedalam Data Pribadi
+        nama.innerHTML = document.getElementById("nama-lengkap").value;
+        email.innerHTML = document.getElementById("email").value;
+        keluarga.innerHTML = document.getElementById("keluarga").value;
+        ibu.innerHTML = document.getElementById("ibu").value;
+        pekerjaan.innerHTML = document.getElementById("pekerjaan").value;
+        alamat.innerHTML = document.getElementById("alamat").value;
+        //Data Kedua  dikirim
+        document.getElementById("pesawat-dipilih").innerHTML = "DHC-6 Twin Otter";
+        document.getElementById("bandara-asal").innerHTML = "Bandara Sentani";
+        var jam = document.getElementById("jam").value;
+        perjalanan.innerHTML = jam + " jam";
+        document.getElementById("potong").innerHTML = '50%';
+        document.getElementById("admin").innerHTML = 500000;
+        document.getElementById("akomodasi").innerHTML = 8000000;
+        document.getElementById("harga-perjam").innerHTML = "19,199,448";
+        var diskont = (19199448* jam + 8000000 +  500000) * 50/100;
+        document.getElementById("total-harga").innerHTML = (19199448 * jam + 8000000 +  500000) - diskont;
+
+    });
+    //untuk asal dari bandara surabaya
+    surabaya.addEventListener("click", () => {
+        const bandara = document.querySelector(".bagian-bandara");
+        const peminjam = document.querySelector(".data-peminjam");
+        peminjam.classList.remove("d-none");
+        bandara.classList.add("d-none");
+        var nama = document.getElementById("data-nama");
+        var email = document.getElementById("data-email");
+        var keluarga = document.getElementById("data-keluarga");
+        var ibu = document.getElementById("data-ibu");
+        var pekerjaan = document.getElementById("data-pekerjaan");
+        var alamat = document.getElementById("data-alamat");
+        var perjalanan = document.getElementById("data-perjalanan");
+
+       //Data dimasukan kedalam Data Pribadi
+        nama.innerHTML = document.getElementById("nama-lengkap").value;
+        email.innerHTML = document.getElementById("email").value;
+        keluarga.innerHTML = document.getElementById("keluarga").value;
+        ibu.innerHTML = document.getElementById("ibu").value;
+        pekerjaan.innerHTML = document.getElementById("pekerjaan").value;
+        alamat.innerHTML = document.getElementById("alamat").value;
+        var perjalanan = document.getElementById("data-perjalanan");
+        //Data Kedua  dikirim
+        document.getElementById("pesawat-dipilih").innerHTML = "DHC-6 Twin Otter";
+        document.getElementById("bandara-asal").innerHTML = "Bandara Juanda Surabaya";
+        var jam = document.getElementById("jam").value;
+        perjalanan.innerHTML = jam + " jam";
+        document.getElementById("potong").innerHTML = '40%';
+        document.getElementById("admin").innerHTML = 500000;
+        document.getElementById("akomodasi").innerHTML = 8000000;
+        document.getElementById("harga-perjam").innerHTML = "19,199,448";
+        var diskont = (19199448 * jam + 8000000 +  500000) * 40/100;
+        document.getElementById("total-harga").innerHTML = (19199448 * jam + 8000000 +  500000) - diskont;
+
+
+    });
+//Bandara Jakarta
+jakarta.addEventListener("click", () => {
+        const bandara = document.querySelector(".bagian-bandara");
+        const peminjam = document.querySelector(".data-peminjam");
+        peminjam.classList.remove("d-none");
+        bandara.classList.add("d-none");
+        var nama = document.getElementById("data-nama");
+        var email = document.getElementById("data-email");
+        var keluarga = document.getElementById("data-keluarga");
+        var ibu = document.getElementById("data-ibu");
+        var pekerjaan = document.getElementById("data-pekerjaan");
+        var alamat = document.getElementById("data-alamat");
+        var perjalanan = document.getElementById("data-perjalanan");
+       //Data dimasukan kedalam Data Pribadi
+        nama.innerHTML = document.getElementById("nama-lengkap").value;
+        email.innerHTML = document.getElementById("email").value;
+        keluarga.innerHTML = document.getElementById("keluarga").value;
+        ibu.innerHTML = document.getElementById("ibu").value;
+        pekerjaan.innerHTML = document.getElementById("pekerjaan").value;
+        alamat.innerHTML = document.getElementById("alamat").value;
+        //Data Kedua  dikirim
+        var jam = document.getElementById("jam").value
+        document.getElementById("pesawat-dipilih").innerHTML = "DHC-6 Twin Otter";
+        document.getElementById("bandara-asal").innerHTML = "Bandara Jakarta Soekarno - Hatta";
+        var jam = document.getElementById("jam").value;
+        perjalanan.innerHTML = jam + " jam";
+        document.getElementById("potong").innerHTML = '30%';
+        document.getElementById("admin").innerHTML = 500000;
+        document.getElementById("akomodasi").innerHTML = 8000000;
+        document.getElementById("harga-perjam").innerHTML = "19,199,448";
+        var diskont = (19199448 * jam + 10000000 +  500000) * 30/100;
+        document.getElementById("total-harga").innerHTML = (19199448 * jam + 8000000 +  500000) - diskont;
+
+    });
+});
+//PESAWAT 5
+pesawat5.addEventListener("click", () => {
+        const pesawat = document.querySelector(".bagian-pesawat");
+        const bandara = document.querySelector(".bagian-bandara");
+        bandara.classList.remove("d-none");
+        pesawat.classList.add("d-none");   
+//untuk asal dari bandara sentani 
+     sentani.addEventListener("click", () => {
+        const bandara = document.querySelector(".bagian-bandara");
+        const peminjam = document.querySelector(".data-peminjam");
+        peminjam.classList.remove("d-none");
+        bandara.classList.add("d-none");
+        var nama = document.getElementById("data-nama");
+        var email = document.getElementById("data-email");
+        var keluarga = document.getElementById("data-keluarga");
+        var ibu = document.getElementById("data-ibu");
+        var pekerjaan = document.getElementById("data-pekerjaan");
+        var alamat = document.getElementById("data-alamat");
+        var perjalanan = document.getElementById("data-perjalanan");
+       //Data dimasukan kedalam Data Pribadi
+        nama.innerHTML = document.getElementById("nama-lengkap").value;
+        email.innerHTML = document.getElementById("email").value;
+        keluarga.innerHTML = document.getElementById("keluarga").value;
+        ibu.innerHTML = document.getElementById("ibu").value;
+        pekerjaan.innerHTML = document.getElementById("pekerjaan").value;
+        alamat.innerHTML = document.getElementById("alamat").value;
+        //Data Kedua  dikirim
+        document.getElementById("pesawat-dipilih").innerHTML = "Embraer Phenom 300";
+        document.getElementById("bandara-asal").innerHTML = "Bandara Sentani";
+        var jam = document.getElementById("jam").value;
+        perjalanan.innerHTML = jam + " jam";
+        document.getElementById("potong").innerHTML = '43%';
+        document.getElementById("admin").innerHTML = 500000;
+        document.getElementById("akomodasi").innerHTML = 5000000;
+        document.getElementById("harga-perjam").innerHTML = "26,376,939";
+        var diskont = (26376939 * jam + 5000000 +  500000) * 43/100;
+        document.getElementById("total-harga").innerHTML = (26376939 * jam + 5000000 +  500000) - diskont;
+
+    });
+    //untuk asal dari bandara surabaya
+    surabaya.addEventListener("click", () => {
+        const bandara = document.querySelector(".bagian-bandara");
+        const peminjam = document.querySelector(".data-peminjam");
+        peminjam.classList.remove("d-none");
+        bandara.classList.add("d-none");
+        var nama = document.getElementById("data-nama");
+        var email = document.getElementById("data-email");
+        var keluarga = document.getElementById("data-keluarga");
+        var ibu = document.getElementById("data-ibu");
+        var pekerjaan = document.getElementById("data-pekerjaan");
+        var alamat = document.getElementById("data-alamat");
+        var perjalanan = document.getElementById("data-perjalanan");
+
+       //Data dimasukan kedalam Data Pribadi
+        nama.innerHTML = document.getElementById("nama-lengkap").value;
+        email.innerHTML = document.getElementById("email").value;
+        keluarga.innerHTML = document.getElementById("keluarga").value;
+        ibu.innerHTML = document.getElementById("ibu").value;
+        pekerjaan.innerHTML = document.getElementById("pekerjaan").value;
+        alamat.innerHTML = document.getElementById("alamat").value;
+        var perjalanan = document.getElementById("data-perjalanan");
+        //Data Kedua  dikirim
+        document.getElementById("pesawat-dipilih").innerHTML = "DHC-6 Twin Otter";
+        document.getElementById("bandara-asal").innerHTML = "Bandara Juanda Surabaya";
+        var jam = document.getElementById("jam").value;
+        perjalanan.innerHTML = jam + " jam";
+        document.getElementById("potong").innerHTML = '40%';
+        document.getElementById("admin").innerHTML = 500000;
+        document.getElementById("akomodasi").innerHTML = 5000000;
+        document.getElementById("harga-perjam").innerHTML = "26,376,939";
+        var diskont = (26376939 * jam + 5000000 +  500000) * 40/100;
+        document.getElementById("total-harga").innerHTML = (26376939 * jam + 5000000 +  500000) - diskont;
+
+
+    });
+//Bandara Jakarta
+jakarta.addEventListener("click", () => {
+        const bandara = document.querySelector(".bagian-bandara");
+        const peminjam = document.querySelector(".data-peminjam");
+        peminjam.classList.remove("d-none");
+        bandara.classList.add("d-none");
+        var nama = document.getElementById("data-nama");
+        var email = document.getElementById("data-email");
+        var keluarga = document.getElementById("data-keluarga");
+        var ibu = document.getElementById("data-ibu");
+        var pekerjaan = document.getElementById("data-pekerjaan");
+        var alamat = document.getElementById("data-alamat");
+        var perjalanan = document.getElementById("data-perjalanan");
+       //Data dimasukan kedalam Data Pribadi
+        nama.innerHTML = document.getElementById("nama-lengkap").value;
+        email.innerHTML = document.getElementById("email").value;
+        keluarga.innerHTML = document.getElementById("keluarga").value;
+        ibu.innerHTML = document.getElementById("ibu").value;
+        pekerjaan.innerHTML = document.getElementById("pekerjaan").value;
+        alamat.innerHTML = document.getElementById("alamat").value;
+        //Data Kedua  dikirim
+        var jam = document.getElementById("jam").value
+        document.getElementById("pesawat-dipilih").innerHTML = "DHC-6 Twin Otter";
+        document.getElementById("bandara-asal").innerHTML = "Bandara Jakarta Soekarno - Hatta";
+        var jam = document.getElementById("jam").value;
+        perjalanan.innerHTML = jam + " jam";
+        document.getElementById("potong").innerHTML = '30%';
+        document.getElementById("admin").innerHTML = 500000;
+        document.getElementById("akomodasi").innerHTML = 5000000;
+        document.getElementById("harga-perjam").innerHTML = "26,376,939";
+        var diskont = (26376939 * jam + 5000000 +  500000) * 30/100;
+        document.getElementById("total-harga").innerHTML = (26376939 * jam + 5000000 +  500000) - diskont;
+
+    });
+});
+function pesankan() {
+    const peminjam = document.querySelector(".data-peminjam");
+    const beres = document.querySelector(".beres");
+    const lapisan = document.querySelector(".lapisan");
+    peminjam.classList.add("d-none");
+    lapisan.classList.remove("d-none");
+    gsap.registerPlugin(TextPlugin);
+gsap.to('.keterangan-tunggu ', {duration:3,  text:'Data Diperoses'});
+gsap.to('.keterangan-tunggu ', {delay:4,duration:1, text:''});
+gsap.to('.keterangan-tunggu ', {duration:3, delay:6,  text:'Data Masuk Antariksa'});
+gsap.to('.keterangan-tunggu ', {delay:9,duration:1, text:''});
+gsap.to('.keterangan-tunggu ', {duration:3, delay:10,  text:'Data Dibaca Pak Dhe Putin'});
+gsap.to('.keterangan-tunggu ', {delay:13,duration:1, text:''});
+gsap.to('.keterangan-tunggu ', {duration:3, delay:14,  text:'Data Berhasil Dikirim'});
+    setTimeout(() => {
+        lapisan.classList.add("d-none");
+        beres.classList.remove("d-none");
+    }, 17000);
+}
+
+</script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>

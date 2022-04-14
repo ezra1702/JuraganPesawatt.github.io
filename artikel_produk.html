@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- My Css-->
+    <style>
+      body{
+  min-height: auto;
+}
+.navbar-brand h2 {
+  font-size: 15px;
+  margin-bottom: 0;
+  margin-top: 0;
+  display: inline-block;
+  cursor: pointer;
+}
+nav{
+  margin: 0;
+  padding: 0;
+}
+.navbar-brand h2:hover {
+  cursor: none;
+}
+
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -5px;
+  top: -3px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  background-color: #f00d0d;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+  background-color: #f00d0d;
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+.poto{
+  border-radius: 20px;
+  border: 10px solid whitesmoke;
+}
+       
+/* Versi Desktop */
+@media (min-width: 992px) { 
+          .xyz::after{ 
+            content: "";
+            display: block;
+            border-bottom: 3px solid seagreen;
+            width: 50%;
+            margin: auto;
+            opacity: 0;
+            transition: 0.5s;
+          }
+          .xyz-stop::after{
+            content: "";
+            display: block;
+            border-bottom: 3px solid seagreen;
+            width: 50%;
+            margin: auto;
+
+          }
+          .xyz:hover::after{
+              opacity: 1;
+              animation: slide 0.3s forwards;
+          }
+          .siapa-kami{
+            margin-left: 390px;
+            width: 500px;
+            border: 502px;
+          }
+          .baris-2{
+            margin-bottom: 100px;
+          }
+          .baris-2 h2{
+            margin-top: 100px;
+          }
+}
+        .garisbawah {
+         margin-top: 25px;
+         margin-bottom: 20px;
+        height: 3px;
+        width: 10%;
+        background-color: #f9d71c;
+        }
+  /* Versi Ipad dan Handphone */
+        @media (max-width: 900px) { 
+          .menu-toggle {
+           display: flex;
+          }
+  nav ul {
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 50%;
+    z-index: -1;
+    transform: translateX(100%);
+    transition: all 1s;
+    opacity: 0;
+  }
+  .poto{
+    width: 100%;
+  }
+  nav ul li {
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 7px;
+    border: 2px solid seagreen;
+    border-radius: 20px;
+  }
+  nav ul li:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid seagreen;
+  }
+  .nav-link:hover {
+    color: rgb(149, 13, 147) !important;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+  nav ul.slide {
+    opacity: 1;
+    transform: translateX(0);
+  }
+      }
+      
+    </style>
+    <title>Hello, world!</title>
+  </head>
+  <body class="bg-black">
+      <!-- Navbar-->
+      <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+        <div class="container-md">
+          <a class="navbar-brand">
+            <i class="bi bi-shop"></i>
+            <h2 class="text-uppercase">JuraganPesawat</h2>
+          </a>
+          <div class="menu-toggle">
+          <input type="checkbox" data-bs-toggle="collapse" data-bs-target="#navmenu">
+          <span></span>
+          <span></span>
+          <span></span>
+          </input>
+          </div>
+          
+          <div class="collapse navbar-collapse" id="navmenu">
+            <ul class="navbar-nav ms-auto slide">
+              <li class="nav-item">
+                <a href="index.html" class="nav-link text-white">Home</a>
+              </li>
+              <li class="nav-item xyz">
+                <a href="tentang-saya.html" class="nav-link text-white">Tentang Saya</a>
+              </li>
+              <li class="nav-item xyz-stop">
+                <a href="artikel_produk.html" class="nav-link text-white">Produk & Artikel</a>
+              </li>
+              <li class="nav-item">
+                <button type="button" class="btn btn-success"> <a class="nav-link text-white" href="pesan.html">Pemesanan/Penyewaan Jett Pribadi</a></button>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </nav>     
+       <div style="margin-bottom:120px;margin-top: 100px;">
+        <h1 class="text-center mt-4 text-white">Berikut ini Spesifikasi Pesawat yang kami Sediakan</h1>
+        <div style=" height: 10px;width: 50%;background-color: #f9d71c;margin-left:25%;" class="mb-5"></div>
+        <!-- Daftar Artikel-->
+          <div class="container pertama">
+            <div class="accordion" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                      Spesifikasi Jet Gulfstream G-IV 
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body"><strong>Deskripsi</strong><br>
+                        Gulfstream IV (atau G-IV atau GIV) dan turunannya adalah keluarga pesawat jet kembar, terutama untuk penggunaan pribadi atau bisnis. Pesawat ini dirancang dan dibangun oleh Gulfstream Aerospace, sebuah perusahaan General Dynamics yang berbasis di Savannah, Georgia, Amerika Serikat dari tahun 1985 hingga 2003. Lebih dari 535 pesawat jenis ini telah diproduksi. GIV pertama melakukan penerbangan perdananya pada 19 September 1985. Model ini menerima sertifikasi tipe dari FAA pada April 1987. G-IV mulai beroperasi dengan nomor seri 1000 pada 1987 dan ditingkatkan ke versi GIV-SP tujuan khusus di nomor seri 1214 pada tahun 1993. Kemudian dinamai ulang G400 pada nomor seri 1500. Varian jangkauan yang lebih pendek dibuat berdasarkan GIV dan diberi sebutan G300 pada tahun 2002.<br>
+                        <strong>Exterior</strong><br>
+                        <ul>
+                            <li>Exterior Height: 24 ft 5 in</li>
+                            <li>Wing Span: 77 ft 10 in</li>
+                            <li>Length: 88 ft 4 in</li>
+                        </ul>
+                        <br>
+                        <strong>Interior</strong><br>
+                        <ul>
+                            <li>Cabin Height: 6 ft 1 In</li>
+                            <li>Cabin Width: 7 ft 3 In</li>
+                            <li>Cabin Length: 45 ft 1 In</li>
+                            <li>Cabin Volume: 1658 cu ft</li>
+                            <li>Internal Baggage: 169 cu ft</li>
+                        </ul>
+                        <br>
+                        <strong>Occupancy</strong><br>
+                        <ul>
+                            <li>Crew: 2</li>
+                            <li>Passengers: 13</li>
+                        </ul>
+                        <br>
+                        <strong>Operating Weights</strong><br>
+                        <ul>
+                            <li>Max T/O Weight: 73200 Lb</li>
+                            <li>Max Landing Weight: 58500 Lb</li>
+                            <li>Operating Weight: 43100 Lb</li>
+                            <li>Empty Weight: 35500 Lb</li>
+                            <li>Fuel Capacity: 29280 lbs Lb</li>
+                            <li>Payload W/Full Fuel: 1220 Lb</li>
+                            <li>Max Payload: 3400 Lb</li>
+                        </ul>
+                        <br>
+                        <strong>Range</strong><br>
+                        <ul>
+                            <li>Normal Range: 3800 nm</li>
+                            <li>Max Range: 4200 nm</li>
+                            <li>Service Ceiling: 45000 ft</li>
+                        </ul>
+                        <br>
+                        <strong>Distances</strong><br>
+                        <ul>
+                            <li>Balanced Field Length: 5700 ft</li>
+                            <li>Landing Distance: 4992 ft</li>
+                        </ul>
+                        <br>
+                        <strong>Performance</strong><br>
+                        <ul>
+                            <li>Rate of Climb: 4219 fpm</li>
+                            <li>Climb Rate One Engine Inop: 1068 fpm</li>
+                            <li>Max Speed: 500 kts</li>
+                            <li>Normal Cruise: 476 kts</li>
+                            <li>Economy Cruise: 445 kts</li>
+                            <li>Cost per Hour: $ 5,591.02</li>
+                            
+                        </ul>
+                        <br>
+                        <strong>Power Plant</strong><br>
+                        <ul>
+                            <li>Engines: 2</li>
+                            <li>Engine Mfg: Rolls Royce</li>
+                            <li>Engine Model: TAY 611-8</li>
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Spesifikasi Bombardier Global 5000
+                    </button>
+                  </h2>
+                  <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body"><strong>Deskripsi</strong><br>
+                        Program Global 5000 diluncurkan pada Februari 2002 dan melakukan penerbangan perdananya pada Maret 2003 sebagai turunan sejati pertama dari Global Express yang mulai beroperasi pada 1999. Sertifikasi jenis Transport Canada (TC) diterima pada Maret 2004, European Joint Aviation Authority (JAA) pada Juli 2004 dan FAA pada September 2004. Global 5000 mulai beroperasi pada April 2005.Global 5000 dapat dengan mudah dikenali melalui badan pesawat CRJ yang terpasang pada sayap superkritis yang disapu rendah dengan sayap kecil. Menampilkan T-tail menyapu dan stabilizer horizontal anhedral, 10 jendela membedakan Global 500 dari Global Express asli dan Gloabl 6000 yang lebih baru<br>
+                        <strong>Exterior</strong><br>
+                        <ul>
+                            <li>Exterior Height: 25 ft 6 in</li>
+                            <li>Wing Span: 94 ft</li>
+                            <li>Length: 96 ft 10 in</li>
+                        </ul>
+                        <br>
+                        <strong>Interior</strong><br>
+                        <ul>
+                            <li>Cabin Height: 6 ft 2 In</li>
+                            <li>Cabin Width: 7 ft 11 In</li>
+                            <li>Cabin Length: 40 ft 9 In</li>
+                            <li>Cabin Volume: 1889 cu ft</li>
+                            <li>Internal Baggage: 195 cu ft</li>
+                        </ul>
+                        <br>
+                        <strong>Occupancy</strong><br>
+                        <ul>
+                            <li>Crew: 2</li>
+                            <li>Passengers: 13</li>
+                        </ul>
+                        <br>
+                        <strong>Operating Weights</strong><br>
+                        <ul>
+                            <li>Max T/O Weight: 92500 Lb</li>
+                            <li>Max Landing Weight: 78600 Lb</li>
+                            <li>Operating Weight: 50861 Lb</li>
+                            <li>Fuel Capacity: 38959 lbs Lb</li>
+                            <li>Payload W/Full Fuel: 2639 Lb</li>
+                            <li>Max Payload: 7139 Lb</li>
+                        </ul>
+                        <br>
+                        <strong>Range</strong><br>
+                        <ul>
+                            <li>Max Range: 5200 nm</li>
+                            <li>Service Ceiling: 51000 ft</li>
+                        </ul>
+                        <br>
+                        <strong>Distances</strong><br>
+                        <ul>
+                            <li>Service Ceiling: 51000 ft</li>
+                            <li>Landing Distance: 2670 ft</li>
+                        </ul>
+                        <br>
+                        <strong>Performance</strong><br>
+                        <ul>
+                            <li>Rate of Climb: 3450 fpm</li>
+                            <li>Climb Rate One Engine Inop: 704 fpm</li>
+                            <li>Max Speed: 504 kts</li>
+                            <li>Normal Cruise: 488 kts</li>
+                            <li>Economy Cruise: 471 kts</li>
+                            <li>Cost per Hour: $ 5,397.57</li>
+                        </ul>
+                        <br>
+                        <strong>Power Plant</strong><br>
+                        <ul>
+                            <li>Engines: 2</li>
+                            <li>Engine Mfg: Rolls Royce</li>
+                            <li>Engine Model: BR710A2-20</li>
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Spesifikasi Learjet 60
+                    </button>
+                  </h2>
+                  <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body"><strong>Deskripsi</strong><br>
+                        Learjet 60 adalah versi perbaikan dari Learjet 55, dengan badan pesawat yang lebih panjang dan mesin turbofan yang lebih bertenaga. Ini pertama kali terbang pada 10 Oktober 1990 dan menerima sertifikasi FAA pada Januari 1993. Modifikasi yang mengubah Learjet Model 55 menjadi Model 60 dihasilkan dari program peningkatan aerodinamis dan kebutuhan untuk meningkatkan kapasitas lini produk Learjet. Beberapa dari modifikasi ini adalah yang pertama untuk Learjet, termasuk manset sayap baru yang ditambahkan ke bagian dalam sayap "Longhorn" dan fairing sayap-ke-tubuh yang semuanya baru.Learjet 60 terkenal karena kinerja time-to-climb-nya, mendaki hingga 41.000 kaki (12.497 m) dalam 18,5 menit dengan berat maksimum. Itu juga dibedakan sebagai Learjet warisan terakhir, menggunakan sayap yang diadaptasi oleh perancang Bill Lear dari pesawat militer Swiss, FFA P-16. Produksi Learjet 60 berakhir pada 2007 setelah 314 pesawat telah dibangun. Learjet 60XR adalah model saat ini dalam produksi dari Bombardier Aerospace.<br>
+                        <strong>Exterior</strong><br>
+                        <ul>
+                            <li>Exterior Height: 14 ft 8 in</li>
+                            <li>Wing Span: 43 ft 9 in</li>
+                            <li>Length: 58 ft 8 in</li>
+                            <li>External Baggage: 24 cu ft</li>
+                        </ul>
+                        <br>
+                        <strong>Interior</strong><br>
+                        <ul>
+                            <li>Cabin Height: 5 ft 9 In</li>
+                            <li>Cabin Width: 5 ft 11 In</li>
+                            <li>Cabin Length: 17 ft 8 In</li>
+                            <li>Cabin Volume: 453 cu ft</li>
+                            <li>Internal Baggage: 24 cu ft</li>
+                        </ul>
+                        <br>
+                        <strong>Occupancy</strong><br>
+                        <ul>
+                            <li>Crew: 2</li>
+                            <li>Passengers: 8</li>
+                        </ul>
+                        <br>
+                        <strong>Operating Weights</strong><br>
+                        <ul>
+                            <li>Max T/O Weight: 23500 Lb</li>
+                            <li>Max T/O Weight: 23500 Lb</li>
+                            <li>Operating Weight: 14772 Lb</li>
+                            <li>Empty Weight: 14640 Lb</li>
+                            <li>PFuel Capacity: 7910 Lb</li>
+                            <li>Max Payload: 2228 Lb</li>
+                        </ul>
+                        <br>
+                        <strong>Range</strong><br>
+                        <ul>
+                            <li>Normal Range: 2186 nm</li>
+                            <li>Max Range: 2418 nm</li>
+                        </ul>
+                        <br>
+                        <strong>Distances</strong><br>
+                        <ul>
+                            <li>Balanced Field Length: 5450 ft</li>
+                            <li>Landing Distance: 5208 ft</li>
+                        </ul>
+                        <br>
+                        <strong>Performance</strong><br>
+                        <ul>
+                            <li>Rate of Climb: 4,500 fpm</li>
+                            <li>Climb Rate One Engine Inop: 714 fpm</li>
+                            <li>Max Speed: 465 kts</li>
+                            <li>Normal Cruise: 436 kts</li>
+                            <li>Economy Cruise: 423 kts</li>
+                            <li>Cost per Hour: $ 2,696.59</li>
+                        </ul>
+                        <br>
+                        <strong>Power Plant</strong><br>
+                        <ul>
+                            <li>Engines: 2</li>
+                            <li>Engine Mfg: Pratt & Whitney Canada</li>
+                            <li>Engine Model: PW305A</li>
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingFour">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                          Spesifikasi DHC-6 Twin Otter
+                      </button>
+                    </h2>
+                    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body"><strong>Deskripsi</strong><br>
+                        Penerbangan pertama DHC-6 Twin Otter dilakukan pada 20 Mei 1965. Lebih dari 900 pesawat telah dibuat sejauh ini, dan saat ini masih dalam produksi. DHC-6 Twin Otter adalah pesawat utilitas STOL (Short Takeoff and Landing) 19 penumpang Kanada yang dikembangkan oleh de Havilland Canada dan saat ini diproduksi oleh Viking Air.
+                        Undercarriage roda tiga tetap pesawat, kemampuan STOL, dan tingkat pendakian yang tinggi telah membuatnya menjadi pesawat kargo, pesawat penumpang regional, dan pesawat MEDEVAC yang sukses. Selain itu, Twin Otter telah populer dengan operasi terjun payung komersial, dan digunakan oleh Tim Parasut Angkatan Darat Amerika Serikat dan Skuadron Pelatihan Terbang ke-98 Angkatan Udara Amerika Serikat.
+                        Pada tahun 1969, Seri 300 diperkenalkan, dimulai dengan nomor seri 231. Performa dan muatan pesawat ditingkatkan dengan memasang mesin PT6A-27 yang lebih bertenaga. Versi ini sejauh ini merupakan varian DHC-6 yang paling sukses.<br>
+                          <strong>Exterior</strong><br>
+                          <ul>
+                              <li>Exterior Height: 19 ft 4 in</li>
+                              <li>Wing Span: 65 ft</li>
+                              <li>Length: 51 ft 9 in</li>
+                              <li>External Baggage: 126 cu ft</li>
+                          </ul>
+                          <br>
+                          <strong>Interior</strong><br>
+                          <ul>
+                              <li>Cabin Volume: 384 cu ft</li>
+                          </ul>
+                          <br>
+                          <strong>Occupancy</strong><br>
+                          <ul>
+                              <li>Crew: 2</li>
+                              <li>Passengers: 10</li>
+                          </ul>
+                          <br>
+                          <strong>Operating Weights</strong><br>
+                          <ul>
+                              <li>Max T/O Weight: 12500 Lb</li>
+                              <li>Max Landing Weight: 12300 Lb</li>
+                              <li>Operating Weight: 7377 Lb</li>
+                              <li>Empty Weight: 7000 Lb</li>
+                              <li>Fuel Capacity: 2457 lbs Lb</li>
+                              <li>Payload W/Full Fuel: 2666 Lb</li>
+                              <li>Max Payload: 5123 Lb</li>
+                          </ul>
+                          <br>
+                          <strong>Range</strong><br>
+                          <ul>
+                              <li>Max Range: 580 nm</li>
+                              <li>Service Ceiling: 25000 ft</li>
+                          </ul>
+                          <br>
+                          <strong>Distances</strong><br>
+                          <ul>
+                              <li>Balanced Field Length: 2700 ft</li>
+                              <li>Landing Distance: 2200 ft</li>
+                          </ul>
+                          <br>
+                          <strong>Performance</strong><br>
+                          <ul>
+                              <li>Rate of Climb: 1440 fpm</li>
+                              <li>Climb Rate One Engine Inop: 300 fpm</li>
+                              <li>Normal Cruise: 175 kts</li>
+                              <li>Normal Cruise: 488 kts</li>
+                              <li>Economy Cruise: 150 kts</li>
+                              <li>Cost per Hour: $ 1,337.47</li>
+                          </ul>
+                          <br>
+                          <strong>Power Plant</strong><br>
+                          <ul>
+                              <li>Engines: 2</li>
+                              <li>Engine Model: PT6A-27</li>
+                              <li>Engine Mfg: Pratt & Whitney Canada</li>
+                          </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingFive">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                          Spesifikasi Embraer Phenom 300
+                      </button>
+                    </h2>
+                    <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body"><strong>Deskripsi</strong><br>
+                        Penerbangan pertama DHC-6 Twin Otter dilakukan pada 20 Mei 1965. Lebih dari 900 pesawat telah dibuat sejauh ini, dan saat ini masih dalam produksi. DHC-6 Twin Otter adalah pesawat utilitas STOL (Short Takeoff and Landing) 19 penumpang Kanada yang dikembangkan oleh de Havilland Canada dan saat ini diproduksi oleh Viking Air.
+                        Undercarriage roda tiga tetap pesawat, kemampuan STOL, dan tingkat pendakian yang tinggi telah membuatnya menjadi pesawat kargo, pesawat penumpang regional, dan pesawat MEDEVAC yang sukses. Selain itu, Twin Otter telah populer dengan operasi terjun payung komersial, dan digunakan oleh Tim Parasut Angkatan Darat Amerika Serikat dan Skuadron Pelatihan Terbang ke-98 Angkatan Udara Amerika Serikat.
+                        Pada tahun 1969, Seri 300 diperkenalkan, dimulai dengan nomor seri 231. Performa dan muatan pesawat ditingkatkan dengan memasang mesin PT6A-27 yang lebih bertenaga. Versi ini sejauh ini merupakan varian DHC-6 yang paling sukses.<br>
+                          <strong>Exterior</strong><br>
+                          <ul>
+                              <li>Exterior Height: 16 ft 5 in</li>
+                              <li>Wing Span: 53 ft 2 in</li>
+                              <li>Length: 52 ft 2 in</li>
+                              <li>External Baggage: 66 cu ft</li>
+                          </ul>
+                          <br>
+                          <strong>Interior</strong><br>
+                          <ul>
+                              <li>Cabin Height: 4 ft 11 In</li>
+                              <li>Cabin Width: 5 ft 1 In</li>
+                              <li>Cabin Length: 17 ft 2 In</li>
+                              <li>Cabin Volume: 324 cu ft</li>
+                              <li>Internal Baggage: 19 cu ft</li>
+                          </ul>
+                          <br>
+                          <strong>Occupancy</strong><br>
+                          <ul>
+                              <li>Crew: 2</li>
+                              <li>Passengers: 7</li>
+                          </ul>
+                          <br>
+                          <strong>Operating Weights</strong><br>
+                          <ul>
+                              <li>Max T/O Weight: 17968 Lb</li>
+                              <li>Max Landing Weight: 16865 Lb</li>
+                              <li>Operating Weight: 11783 Lb</li>
+                              <li>Fuel Capacity: 5353 lbs Lb</li>
+                              <li>Payload W/Full Fuel: 942 Lb</li>
+                              <li>Max Payload: 2216 Lb</li>
+                          </ul>
+                          <br>
+                          <strong>Range</strong><br>
+                          <ul>
+                              <li>Max Range: 580 nm</li>
+                              <li>Service Ceiling: 25000 ft</li>
+                          </ul>
+                          <br>
+                          <strong>Distances</strong><br>
+                          <ul>
+                              <li>Takeoff Distance: 3138 ft</li>
+                              <li>Landing Distance: 3700 ft</li>
+                          </ul>
+                          <br>
+                          <strong>Performance</strong><br>
+                          <ul>
+                              <li>Rate of Climb: 3335 fpm</li>
+                              <li>Climb Rate One Engine Inop: 1044 fpm</li>
+                              <li>Max Speed: 453 kts</li>
+                              <li>Normal Cruise: 430 kts</li>
+                              <li>Economy Cruise: 383 kts</li>
+                              <li>Cost per Hour: $ 1,837.57</li>
+                          </ul>
+                          <br>
+                          <strong>Power Plant</strong><br>
+                          <ul>
+                              <li>Engines: 2</li>
+                              <li>Engine Model: PW535E</li>
+                              <li>Engine Mfg: Pratt & Whitney Canada</li>
+                          </ul>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          </div>
+          <div  class="pt-5 bg-dark text-white artikel">
+          <h1 class="text-center mt-4">Artikel Yang Mungkin Berguna</h1>
+          <div style=" height: 10px;width: 50%;background-color: #f9d71c;margin-left:25%;" class="mb-5"></div>
+          <h2 class="text-center">Apa Itu Jet Pribadi ?</h2>
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-6 col-sm-12 pt-4"><img src="https://akcdn.detik.net.id/visual/2021/10/18/ilustrasi-kabin-private-jet_169.jpeg?w=650" class="poto" width="470px"></div>
+              <div class="col-xl-6 col-sm-12 pt-4">
+          <p class="text-muted pb-5" id="penje"><i>Dilansir dari Wikipedia.com, </i>Jet Pribadi adalah jenis Pesawat yang biasanya dibeli/disewa untuk digunakan sebagai alat transportasi pribadi (tidak umum/bebas melakukan apapun). Jet Pribadi biasanya dibeli/disewa bagi seseorang yang ingin menaiki pesawat tanpa mengantri di Bandara atau yang ingin pergi ke suatu tempat tanpa membeli tiket pesawat, umumnya Jet Pribadi memiliki ukuran yang lebih kecil daripada Pesawat Komersial umum yang dimiliki Maskapai, biasanya Jet Pribadi memiliki Panjang 10-20 Meter dan biasanya didesain lebih mewah daripada pesawat dan biasanya Jet Pribadi memiliki Harga sekitar Rp 10 Milyar Keatas,dan juga biasanya Jet Pribadi ditenagai dengan Mesin Turbofan Bypass Rendah yang memiliki Daya dorong dan kecepatan yang lebih tinggi daripada Mesin Turbofan Bypass Tinggi yang biasa digunakan pada Pesawat.</p>
+        </div> 
+        </div>  
+        </div>
+          <h2 class="text-center">Jet Pribadi tapi Tempur</h2>
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-6 col-sm-12 ">
+          <p class="text-muted pb-5" ><i>sekarang Pesawat Jet sudah berbentuk moderen dan bergungsi hanya untuk mengantarkan penumpang tetapi dulu beda</i>Jaman dulu (Perang dunia ke-2 ) Pesawat Jet digunakan untuk berperang, seperti halnya meluncurkan bomb antar negara menembaki benteng musuh di dsb. sebagai contoh gambar disampimg, gambar tersebut bernama Pesawat Messerschmitt Me 262, pesawat tersebut paling dan sering digunakan pada perang ke-2 sangat berbeda bukan ? <i>Dilansir dari wikipedia.com</i>Messerschmitt Me 262, dijuluki Schwalbe (Jerman: "Burung Walet") dalam versi tempur, atau Sturmvogel (Jerman: "Burung Badai") dalam versi pembom tempur, adalah pesawat tempur jet operasional pertama di dunia yang beroperasi. Pekerjaan desain dimulai sebelum Perang Dunia II dimulai, tetapi masalah dengan mesin, metalurgi dan gangguan tingkat atas membuat pesawat dari status operasional dengan Luftwaffe hingga pertengahan 1944. Me 262 lebih cepat dan lebih berat dari pesawat tempur Sekutu manapun, termasuk Gloster Meteor bermesin jet Inggris</p>
+        </div> 
+          <div class="col-xl-6 col-sm-12 pt-3"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Me_262_T-2-4012_side_view_on_ground.jpg" class="poto" width="470px" height="300px"></div>
+          </div>
+        </div>
+        <h2 class="text-center pb-2">Jett Pribadi Termahal</h2>
+        <div class="container">
+        <p class="text-muted text-center pb-5" style="font-size: 19px;">Airbus A380 milik pangeran Alwaleed bin Talal dari Arab Saudi merupakan jet pribadi termahal di dunia yang dibanderol sebesar US$ 502 juta. Jet pribadi ini memiliki luas hingga 550 meter persegi dan dilengkapi dengan perabotan mewah. Terdapat ruang konser, pemandian turki, ruang garasi, bahkan kandang kuda dan unta dalam pesawat ini. Selain itu, pesawat ini mempunyai kecepatan maksimum 1.050 kilometer/jam dan jangkauan penerbangan 15.700 km.</p>
+        </div>
+        </div>
+<!-- Animasi Javascript-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/TextPlugin.min.js"></script>
+<!-- My Javascript-->
+    <script>
+      var nav = document.querySelector('nav');
+
+      window.addEventListener('scroll',() => {
+  if (window.pageYOffset > 0) {
+    nav.classList.add('bg-dark', 'shadow');
+  } else {
+    nav.classList.remove('bg-dark', 'shadow');
+  }
+});
+    </script>
+    <!-- Javascript Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
+</html>
